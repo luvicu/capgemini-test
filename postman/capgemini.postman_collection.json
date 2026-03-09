@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "84b7591b-9e7d-413c-a383-ca81a4799134",
+		"name": "capgemini",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "valid dni",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dni\": \"222222\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1080/check-dni",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"check-dni"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invalid dni",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dni\": \"99999999w\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1080/check-dni",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"check-dni"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"message\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1080/email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sms",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dni\": \"222222\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1080/check-dni",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"check-dni"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

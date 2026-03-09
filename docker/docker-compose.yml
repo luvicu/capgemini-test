@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  mockserver:
+    image: mockserver/mockserver:latest
+    container_name: mockserver
+    ports:
+      - "1080:1080"
+    environment:
+      MOCKSERVER_LOG_LEVEL: INFO
+      MOCKSERVER_INITIALIZATION_JSON_PATH: /config/init.json
+    volumes:
+      - ./mockserver-config:/config
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: users
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
