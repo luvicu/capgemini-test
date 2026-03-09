@@ -1,4 +1,15 @@
-# Capgemini-Test
+# Capgemini Test
+
+Implementación del ejercicio técnico de Capgemini utilizando:
+
+- Java 17
+- Spring Boot 3
+- PostgreSQL
+- Flyway
+- OpenFeign
+- Docker
+- MockServer
+- Maven
 
 ## Prerrequisitos
 
@@ -8,6 +19,81 @@ Asegúrese de tener instalados los siguientes componentes antes de ejecutar el p
 - Maven
 - Git
 - Docker
+
+---
+# Levantar infraestructura
+
+El proyecto incluye un entorno Docker con:
+
+- PostgreSQL
+- MockServer
+
+Ejecutar:
+```bash
+cd docker
+docker compose up
+```
+
+Servicios disponibles:
+
+| Servicio   | Puerto |
+| ---------- | ------ |
+| PostgreSQL | 5432   |
+| MockServer | 1080   |
+
+La API estará disponible en: http://localhost:8080
+
+---
+
+## Endpoints
+### Crear usuario
+
+POST /users
+
+Ejemplo:
+
+```json
+{
+"name": "pablo",
+"email": "email@email.com",
+"phone": "677998899",
+"rol": "admin",
+"dni": "23454234W"
+}
+```
+
+Respuesta:
+
+201 Created
+{
+"id": 1
+}
+
+### Obtener usuario
+
+GET /users/{id}
+
+Ejemplo:
+
+GET /users/1
+Tests
+
+### Se incluyen:
+
+- Tests unitarios del service
+- Colección de Postman con pruebas de la API
+
+---
+## Infraestructura Docker
+
+Los contenedores incluyen:
+- PostgreSQL
+- MockServer
+
+MockServer simula:
+- Validación de DNI
+- Envío de email
+- Envío de SMS
 
 ---
 
