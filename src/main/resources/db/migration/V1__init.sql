@@ -19,6 +19,6 @@ CREATE TABLE users (
 -- Insertar datos iniciales
 INSERT INTO rooms (name) VALUES ('Sala 1'), ('Sala 2');
 
-INSERT INTO users (name, email, role, room_id) VALUES
-('Juan Pérez', 'juan@example.com', 'ADMIN', 1),
-('María López', 'maria@example.com', 'USER', 2);
+INSERT INTO users (name, email, dni, phone, role, room_id) VALUES
+('Juan Pérez', 'juan@example.com', '12345678A', '600000001', 'admin', 1),
+('Maria López', 'maria@example.com', '12345679B', '600000002', 'superadmin', 2);
